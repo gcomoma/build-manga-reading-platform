@@ -8,6 +8,7 @@ import BrowsePage from './pages/BrowsePage';
 import LibraryPage from './pages/LibraryPage';
 import ReadingPage from './pages/ReadingPage';
 import ProfilePage from './pages/ProfilePage';
+import SignUpPage from './pages/SignUpPage';
 import Navbar from './components/Navbar';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/library" element={<LibraryPage />} />
                 <Route path="/read/:id" element={<ReadingPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/signup" element={<SignUpPage />} />
               </Routes>
             </main>
             <Toaster />
