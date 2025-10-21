@@ -19,7 +19,7 @@
 
 ### Authentication System
 - [COMPLETED] Create sign up page with form validation (300 LOC × 10 = 3000 tokens)
-- [PENDING] Create login page (200 LOC × 10 = 2000 tokens)
+- [IN_PROGRESS] Create sign in page with form validation (250 LOC × 10 = 2500 tokens)
 - [PENDING] Implement authentication context (150 LOC × 10 = 1500 tokens)
 - [PENDING] Add protected routes (100 LOC × 10 = 1000 tokens)
 
@@ -36,7 +36,8 @@
 - [PENDING] Manga data management (250 LOC × 10 = 2500 tokens)
 
 ## Discussions
-- Sign up page should include email/password validation
-- Form should use react-hook-form with zod validation
-- Need proper error handling and loading states
-- Should integrate with Supabase Auth when backend is ready
+- Sign in page should match sign up page design patterns
+- Include "Remember me" functionality and password reset
+- Form validation with react-hook-form and zod
+- Proper error handling for authentication failures
+- Social login options for enhanced UX
