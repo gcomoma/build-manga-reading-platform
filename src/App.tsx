@@ -1,15 +1,11 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ThemeProvider } from 'next-themes';
-import { Toaster } from 'sonner';
-import HomePage from './pages/HomePage';
-import BrowsePage from './pages/BrowsePage';
-import LibraryPage from './pages/LibraryPage';
-import ReadingPage from './pages/ReadingPage';
-import ProfilePage from './pages/ProfilePage';
-import SignUpPage from './pages/SignUpPage';
-import Navbar from './components/Navbar';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
+import Home from '@/pages/Home';
+import SignUp from '@/pages/SignUp';
+import SignIn from '@/pages/SignIn';
 import './App.css';
 
 const queryClient = new QueryClient();
@@ -17,23 +13,17 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <ThemeProvider defaultTheme="light" storageKey="mangaverse-ui-theme">
         <Router>
           <div className="min-h-screen bg-background text-foreground">
-            <Navbar />
-            <main>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/browse" element={<BrowsePage />} />
-                <Route path="/library" element={<LibraryPage />} />
-                <Route path="/read/:id" element={<ReadingPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/signup" element={<SignUpPage />} />
-              </Routes>
-            </main>
-            <Toaster />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<SignIn />} />
+            </Routes>
           </div>
         </Router>
+        <Toaster />
       </ThemeProvider>
     </QueryClientProvider>
   );
